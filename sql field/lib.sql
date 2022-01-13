@@ -10,7 +10,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -35,16 +34,11 @@ CREATE TABLE `book` (
   `path` varchar(200) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-
 --
 -- Table structure for table `student_book`
 --
 
-
 -- --------------------------------------------------------*/
-
-
-
 
 --
 -- Indexes for table `book`
@@ -52,13 +46,6 @@ CREATE TABLE `book` (
 ALTER TABLE `book`
   ADD PRIMARY KEY (`b_id`),
   ADD UNIQUE KEY `b_id` (`b_id`);
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `student_registration`
---
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

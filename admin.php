@@ -137,8 +137,6 @@ ul li:hover ul li{
                     <th>Book ID</th>
                     <th>Book Name</th>
                     <th>Book Writter</th>
-                    <!-- <th>Actual Copy</th>
-                    <th>Available Copy</th> -->
                     <th>Depertment</th>
                     <th>Ebook Name</th>
                 </tr>
@@ -157,8 +155,6 @@ ul li:hover ul li{
                         echo "<td>" ;echo $row["b_id"]; echo "</td>";
                         echo "<td>";echo $row["booksname"]; echo "</td>";
                         echo "<td>"; echo $row["authorname"]; echo "</td>";
-                        //echo "<td>"; echo $row["copies"]; echo "</td>";
-                        //echo "<td>"; echo $row["avl_cpy"]; echo "</td>";
                         echo "<td>"; echo $row["dept"]; echo "</td>";
                         echo "<td>"; echo $row["file_name"]; echo "</td>";
                         echo "</tr>";

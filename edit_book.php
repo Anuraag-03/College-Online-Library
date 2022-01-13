@@ -11,9 +11,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['sub']))
   $bookname=$_POST['booksname'];
   $authorname=$_POST['authorname'];
   $id=$_POST['book_id'];  
-  // $copy=$_POST['copies'];
-  // $dept=$_POST['dept'];
-  // $avl_cpy=$copy;
   
 
   if($bookname!="" && $authorname!="" && $id!="")
@@ -242,14 +239,6 @@ ul li:hover ul li{
 	 <td><input type="text" name="authorname" placeholder="books author name"/></td>
         <td style="color:red;font-weight:bold;text-align:center"><?php echo $msg; ?></td>
 	</tr>
-
-
-	<!-- <tr>
-	  <td>NO OF COPIES:</td>
-	 <td><input type="text" name="copies" placeholder="Available copies"/></td>
-	</tr> -->
-      
-      
   
    <tr>
 	  <td>DEPARTMENT:</td>
