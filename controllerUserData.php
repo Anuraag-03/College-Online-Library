@@ -182,16 +182,16 @@ if(isset($_POST['signup'])){
         $specialChars = preg_match('@[^\w]@', $password);
 
     
-        if($password !== $cpassword){
-            $errors['password'] = "Confirm password not matched!";
-        }
+        
         if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) 
      {
 
         $errors['password'] = "Give a Strong Password !";
 
      }
-        
+     if($password !== $cpassword){
+        $errors['password'] = "Confirm password not matched!";
+    }
         else{
             $code = 0;
             $email = $_SESSION['email']; //getting this email using session
