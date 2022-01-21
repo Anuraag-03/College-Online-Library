@@ -252,7 +252,7 @@ ul li:hover ul li{
 
 	<tr>
 	 <td>UPLOAD EBOOK:</td>
-	 <td><input type="file" name="file"  /></td>
+	 <td><input type="file" name="file"  /></td>  <!-- file input -->
 	</tr>
       <tr>
 	  <td><h2><input style="margin-left:180%;margin-top:10%;" type="submit" name="sub" value="SUBMIT"/></h2></td>
