@@ -13,12 +13,6 @@ $query1=mysqli_query($conn,$query);
 $ros=mysqli_fetch_array($query1);
 $book_name=$ros['booksname'];
 $auth_name=$ros['authorname'];
-// $avl_cpy=$ros['avl_cpy'];
-
-
-
-
-
 
 
 if(isset($_POST['sub'])){
@@ -33,105 +27,6 @@ header('content-length='.filesize($path));
 readfile($path);
 
 }
-
-
-
-
-
-// if(isset($_POST['rqst'])){
-    
-    
-//     $query="select * from student_book where `student_book`.`emailid`= '$email'";
-//     $query1=mysqli_query($conn,$query);
-//     $ros=mysqli_fetch_array($query1);
-    
-    
-    
-    
-// if ($ros[0]!="")
-//    {
-         
-//         $book2=$ros['book_2'];
-    
-//         if($book2=="")
-//         {
-//          $sql1= "select date_format(curdate(),'%d-%m-%Y')" ;
-// 	     $res1 = mysqli_query ($conn,$sql1);
-// 	     $row1 = mysqli_fetch_row($res1);
-// 	     $recive=$row1[0];
-            
-//          $sql2= "select date_format(curdate()+15,'%d-%m-%Y')" ;
-// 	     $res2 = mysqli_query ($conn,$sql2);
-// 	     $row2 = mysqli_fetch_row($res2);
-// 	     $submit=$row2[0];
-            
-            
-//             $sql="UPDATE `student_book` SET". "`book_2_id` ='$id',"."`book_2` = '$book_name',"."`recive_date_2` = '$recive',". "`submisson_date_2` = '$submit'"." WHERE `student_book`.`emailid` ="."'$email'";
-          
-//               $data=mysqli_query($conn,$sql); 
-//              $cur=$avl_cpy-1;
-            
-//             $sql2="UPDATE `book` SET". "`avl_cpy` ='$cur'"." WHERE `book`.`b_id` ="."'$id'";
-//             mysqli_query($conn,$sql2);
-            
-//               if($data)
-//               {
-//                 $msg= "Book Requested..!!<br>Communicate With Librarian.";
-//               }
-//               else{
-//                   $msg="Something Went Wrong";
-                  
-//                    }
-//            }
-    
-    
-//         else{
-//             $msg="You Can'nt Request Books.<br>Please Return Previous Books.";
-//              }
-//         }
-    
-    
-    
-//     //2nd condition=====>>
-    
-//         if($ros[0]==""){
-            
-//          $sql1= "select date_format(curdate(),'%d-%m-%Y')" ;
-// 	     $res1 = mysqli_query ($conn,$sql1);
-// 	     $row1 = mysqli_fetch_row($res1);
-// 	     $recive=$row1[0];
-            
-//          $sql2= "select date_format(curdate()+15,'%d-%m-%Y')" ;
-// 	     $res2 = mysqli_query ($conn,$sql2);
-// 	     $row2 = mysqli_fetch_row($res2);
-// 	     $submit=$row2[0];
-            
-//             $insert="INSERT INTO `student_book`(`emailid`,`book_1_id`,`book_1`,`recive_date_1`,`submisson_date_1`) VALUES('".$email."','".$id."','".$book_name."','".$recive."','".$submit."')";
-            
-           
-//               $data=mysqli_query($conn,$insert); 
-            
-//             $cur=$avl_cpy-1;
-            
-//             $sql2="UPDATE `book` SET". "`avl_cpy` ='$cur'"." WHERE `book`.`b_id` ="."'$id'";
-//             mysqli_query($conn,$sql2);
-            
-//               if($data)
-//               {
-//                 $msg= "Book Requested..!!<br>Communicate With Librarian.";
-//               }
-//               else{
-//                   $msg="Something Went Wrong";
-                  
-//                    }
-            
-//             }
-// }
-// }
-
-// else{
-//     $msg="Not Enough book";
-// }
 
 ?>
 
