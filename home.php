@@ -1,25 +1,26 @@
 <?php require_once "controllerUserData.php"; ?>
+<!-- controllerUserData file embeded with current file   -->
 <?php 
+// getting session variables from controllerUserData file 
 $email = $_SESSION['email'];
 $password = $_SESSION['password'];
 $name=$_SESSION["name"];
+// retruns  string with first character in Upper-case
 $namecap=ucwords($name);
 ?>
 
 
-
-
 <?php
 include("conn.php");
+// establishes new connection with Lib-DB 
 ?>
 
 
 <!DOCTYPE html>
 <html>
+
 <style>
-    
-    
-    
+/* Styling the Web-Page   */
 body{
   background: url("2.jpg");
 }
@@ -74,7 +75,6 @@ ul li:hover ul li{
 }
 .nav{
   padding-left:13%;
-
 }
 .box-cnt{
 
@@ -117,27 +117,24 @@ ul li:hover ul li{
     a{
         color: white;
     }
+        
+</style>
     
-    
-    </style>
-    
-    
-    
-    
-  
-    
-    
-    
-<head><title>Student_DashBoard</title></head>
+     
+<head>
+  <title>Student_DashBoard</title>
+</head>
+<!-- Body Starts here  -->
 <body>
   <div class="box">
+    <!-- Title Box  -->
    <table  style =" font-size:16pt"  align="center" width="100%" height="100%">
       <tr>
-        <td style="color:white"><h1 align="center"><marquee><i>Welcome To Online Library</i>  </marquee></h1></td>
+        <td style="color:white"><h1 align="center">
+          <marquee><i>Welcome To Online Library</i>  </marquee></h1></td>
       </tr>
       <tr>
         <td ><mark style="color:white;background-color:maroon";> &nbsp;Welcome 
-            
             <b><?php echo $namecap; ?> &nbsp;</b></mark></td>
       </tr>
     </table>
@@ -145,9 +142,13 @@ ul li:hover ul li{
 
   <div class="nav">
     <ul>
-      <li><a style="background-color: green" href="sdb.php">HOME</a></li>
+      <!-- current page  -->
+      <li><a style="background-color: green" href="sdb.php">HOME</a></li> 
+      <!-- redirects to help-us page  -->
       <li><a href="helpus.php">HELP US</a></li>
+      <!-- redirects to about-us page  -->
       <li><a href="aboutus.php">ABOUT US</a></li>
+      <!-- redirects to login page  -->
       <li><a href="logout-user.php">LOGOUT</a></li>
     </ul>
   
@@ -155,67 +156,68 @@ ul li:hover ul li{
 
 </div>
 
-  <div class="boxtwo" style="border-radius: 10px; width:80%; height:900px; margin-left:13%;margin-top:10px;background-color:white">
+  <div class="boxtwo" style="border-radius: 10px; width:80%; 
+  height:900px; margin-left:13%;margin-top:10px;background-color:white">
+  <!-- outer box  -->
       
-      
-      
-      
+  <!-- cse box  -->
     <div class="box-cnt">
       <h3 class="box-cnt-h">COMPUTER SCIENCE ENGINEERING</h3>
          <table class="box-table">
                 <tr>
+                  <!-- row fields  -->
                     <th> Book ID </th>
                     <th> Book Name </th>
                     <th> Book Writter </th>
                     <th> Ebook Name </th>
                 </tr>
-               
+               <!-- finds all books brom cse dept from Lib-DB -->
             <?php  $data=mysqli_query($conn,"SELECT * FROM `book`");
 	              while($row = mysqli_fetch_array($data))
 	               {   
                       if($row["dept"]=="cse"){
                         echo "<tr>";
                           $bookid_cse=NULL;
-                          $bookid_cse=$row["b_id"];
-                          $lg1="<a href='view_book.php?id=$bookid_cse'>";
+                          $bookid_cse=$row["b_id"]; // book_id
+                          $lg1="<a href='view_book.php?id=$bookid_cse'>"; // link to open to view eBook
                         echo "<td>" ;echo $row["b_id"]; echo "</td>";
-                        echo "<td>";echo "$lg1"; echo $row["booksname"]; echo "</a>"; echo "</td>";
-                        echo "<td>"; echo $row["authorname"]; echo "</td>";
-                        echo "<td>"; echo $row["file_name"]; echo "</td>";
+                        echo "<td>";echo "$lg1"; echo $row["booksname"]; echo "</a>"; echo "</td>"; // link
+                        echo "<td>"; echo $row["authorname"]; echo "</td>"; // author name
+                        echo "<td>"; echo $row["file_name"]; echo "</td>"; // file name 
                         echo "</tr>";
-                          $bookid_cse=NULL;
+                        $bookid_cse=NULL; // clearing id 
                       }
                     }
 
 	            ?>
-                </table>
-
-
+         </table>
     </div>
 
+    <!-- IT box  -->
     <div class="box-cnt">
       <h3 class="box-cnt-h">INFORMATION TECHNOLOGY</h3>
         
         <table class="box-table">
                 <tr>
-                    <th>Book ID</th>
+                  <!-- row fields  -->
+                    <th>Book ID</th> 
                     <th>Book Name</th>
                     <th>Book Writter</th>
                     <th>Ebook Name</th>
                 </tr>
-               
+               <!-- finds all books brom IT dept from Lib-DB -->
             <?php  $data=mysqli_query($conn,"SELECT * FROM `book`");
 	              while($row = mysqli_fetch_array($data))
 	               {   
                       if($row["dept"]=="it"){
                         echo "<tr>";
                           $bookid_tt=NULL;
-                          $bookid_tt=$row["b_id"];
-                          $lg2="<a href='view_book.php?id=$bookid_tt'>";
+                          $bookid_tt=$row["b_id"]; // book_id
+                          $lg2="<a href='view_book.php?id=$bookid_tt'>"; // link to open to view eBook
                         echo "<td>" ;echo $row["b_id"]; echo "</td>";
-                        echo "<td>";echo "$lg2"; echo $row["booksname"]; echo "</a>"; echo "</td>";
-                        echo "<td>"; echo $row["authorname"]; echo "</td>";
-                        echo "<td>"; echo $row["file_name"]; echo "</td>";
+                        echo "<td>";echo "$lg2"; echo $row["booksname"]; echo "</a>"; echo "</td>";// link
+                        echo "<td>"; echo $row["authorname"]; echo "</td>"; // author name
+                        echo "<td>"; echo $row["file_name"]; echo "</td>"; // file name
                         echo "</tr>";
                           $bookid_tt=NULL;
                       }
@@ -223,37 +225,35 @@ ul li:hover ul li{
 
 	            ?>
                 </table>
-
-
     </div>
-      
-    
-    
+        
       <br/clear="all">
 
+    <!-- EEE Box  -->
     <div class="box-cnt">
       <h3 class="box-cnt-h">ELECTRICAL AND ELECTRONICS ENGINEERING</h3>
         
         <table class="box-table">
                 <tr>
+                  <!-- row fields  -->
                     <th>Book ID</th>
                     <th>Book Name</th>
                     <th>Book Writter</th>
                     <th>Ebook Name</th>
                 </tr>
-               
+               <!-- finds all books brom EEE dept from Lib-DB -->
             <?php  $data=mysqli_query($conn,"SELECT * FROM `book`");
 	              while($row = mysqli_fetch_array($data))
 	               {   
                       if($row["dept"]=="ee"){
                         echo "<tr>";
                           $bookid_ee=NULL;
-                          $bookid_ee=$row["b_id"];
-                          $lg3="<a href='view_book.php?id=$bookid_ee'>";
+                          $bookid_ee=$row["b_id"]; // b_id
+                          $lg3="<a href='view_book.php?id=$bookid_ee'>"; // link to open view book
                         echo "<td>" ;echo $row["b_id"]; echo "</td>";
-                        echo "<td>";echo "$lg3"; echo $row["booksname"]; echo "</a>"; echo "</td>";
-                        echo "<td>"; echo $row["authorname"]; echo "</td>";
-                        echo "<td>"; echo $row["file_name"]; echo "</td>";
+                        echo "<td>";echo "$lg3"; echo $row["booksname"]; echo "</a>"; echo "</td>"; // link
+                        echo "<td>"; echo $row["authorname"]; echo "</td>"; // author name
+                        echo "<td>"; echo $row["file_name"]; echo "</td>"; // file name 
                         echo "</tr>";
                           $bookid_ee=NULL;
                       }
@@ -265,30 +265,32 @@ ul li:hover ul li{
 
     </div>
 
+    <!-- Mechanical Box   -->
     <div class="box-cnt">
       <h3 class="box-cnt-h">MECHANICAL ENGINEERING</h3>
         
         
         <table class="box-table">
                 <tr>
+                  <!-- row fields  -->
                     <th>Book ID</th>
                     <th>Book Name</th>
                     <th>Book Writter</th>
                     <th>Ebook Name</th>
                 </tr>
-               
+               <!-- finds all books brom Mechanical dept from Lib-DB -->
             <?php  $data=mysqli_query($conn,"SELECT * FROM `book`");
 	              while($row = mysqli_fetch_array($data))
 	               {   
                       if($row["dept"]=="me"){
                         echo "<tr>";
                           $bookid_me=NULL;
-                          $bookid_me=$row["b_id"];
-                          $lg4="<a href='view_book.php?id=$bookid_me'>";
+                          $bookid_me=$row["b_id"]; // b_id 
+                          $lg4="<a href='view_book.php?id=$bookid_me'>"; // link to open view book
                         echo "<td>" ;echo $row["b_id"]; echo "</td>";
-                        echo "<td>";echo "$lg4"; echo $row["booksname"]; echo "</a>"; echo "</td>";
-                        echo "<td>"; echo $row["authorname"]; echo "</td>";
-                        echo "<td>"; echo $row["file_name"]; echo "</td>";
+                        echo "<td>";echo "$lg4"; echo $row["booksname"]; echo "</a>"; echo "</td>"; // link
+                        echo "<td>"; echo $row["authorname"]; echo "</td>"; // author name 
+                        echo "<td>"; echo $row["file_name"]; echo "</td>"; // file name 
                         echo "</tr>";
                           $bookid_me=NULL;
                       }
@@ -304,7 +306,7 @@ ul li:hover ul li{
 
   </div>
 
-
+     <!-- thanks box  -->
       <div class="boxthree" style="background-color:orange; border:solid 2px orange;border-radius: 10px; width:73.5%; height:40px; margin-left:13%; margin-top:15px" >
         <marquee behavior="alternate" direction="right" loop="1" style="margin-right:38%" align="center"><h6 style="line-height:1px;">Thank You For Using This System.</h6></marquee>
 

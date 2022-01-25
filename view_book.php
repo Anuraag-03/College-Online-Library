@@ -2,28 +2,42 @@
 $msg="";
 include("conn.php");
 session_start();
+// session starts 
 
+// session variables 
 $name = $_SESSION["name"];
 $email = $_SESSION["email"];
 $id=$_GET['id'];
 
-
+// find the book from Lib-Db 
 $query="select * from book where `book`.`b_id`= '$id'";
 $query1=mysqli_query($conn,$query);
+
+// convert into associative  array
 $ros=mysqli_fetch_array($query1);
 $book_name=$ros['booksname'];
 $auth_name=$ros['authorname'];
 
-
+// when user clicks download button 
 if(isset($_POST['sub'])){
-    
+// find the book form Lib-DB    
 $query="select * from book where `book`.`b_id`= '$id'";
 $query1=mysqli_query($conn,$query);
+// convert it into associative array
 $ros=mysqli_fetch_array($query1);
+// path 
 $path=$ros['path'];
+
+// we will be downloading the pdf whose name is given by id
 header('content-Disposition: attachment;filename = '.$id.'');
+
+// outputing the pdf 
 header('content-type:application/pdf');
+
+// gives the size of the file 
 header('content-length='.filesize($path));
+
+// the orginal pdf source is present in path
 readfile($path);
 
 }
@@ -34,6 +48,7 @@ readfile($path);
 <head><title>View Book</title>
     
 <style>
+/* Styling the Web-Page  */
 body{
 	background: url(2.jpg);
 }
@@ -116,9 +131,10 @@ body{
     }
 </style>
 </head>
-
+<!-- Body starts here  -->
 <body>
   <div class="box">
+	  <!-- Title Box  -->
    <table  style =" font-size:16pt"  align="center" width="100%" height="100%" >
       <tr>
         <td style="color:royalblue"><h1><marquee>
@@ -132,6 +148,7 @@ body{
     </table>
   </div>
    
+  <!-- Menu Bar  -->
    <table id="table1">
 	<tr>
 		<td class="td1">
@@ -148,14 +165,17 @@ body{
 		</td>
 	</tr>
 </table>
+
     <br>
     <br>
 
-   <div  class="boxtwo" style="border:solid 1px #CF0403;border-radius: 10px; width:73.5%; height:360px; margin-left:13%;background-color:white">
+   <div  class="boxtwo" style="border:solid 1px #CF0403;border-radius: 10px; 
+   width:73.5%; height:360px; margin-left:13%;background-color:white"> 
+   <!-- outer decorative box  -->
 
         <fieldset style="background:rgba(0,0,0,0.38)" class="five">
-            <form method="post">
-		
+            <form method="post"> 
+<!-- contents  -->
 <table  id="table2">
 	<tr>
 		<td  class="td2">
@@ -193,18 +213,23 @@ body{
 		E-BOOK :
 		</td>
 		<td class="td2">
-            
 			<input type="submit" name="sub" value="DOWNLOAD"> 
+			<!-- download button  -->
 		</td>
 	</tr>
 	
-</table>
-                </form>
-      </fieldset>
-      </div >
-
-     <div class="boxthree" style="background-color:orange; border:solid 2px orange;border-radius: 10px; width:73.5%; height:40px; margin-left:13%; margin-top:15px" >
-      <marquee behavior="alternate" direction="right" loop="1" style="margin-right:38%" align="center"><h5 style="line-height:1px;">For any query please <a href="aboutus.php">contact us</a> . Thank You.</h5></marquee>
+      </table>
+    </form>
+  </fieldset>
+</div >
+ 
+<!-- thanks box  -->
+     <div class="boxthree" style="background-color:orange;
+	  border:solid 2px orange;border-radius: 10px; width:73.5%; height:40px; 
+	  margin-left:13%; margin-top:15px" >
+      <marquee behavior="alternate" direction="right" loop="1" 
+	  style="margin-right:38%" align="center"><h5 style="line-height:1px;">
+	  For any query please <a href="aboutus.php">Contact-Us</a> . Thank You.</h5></marquee>
 
 
     </div>

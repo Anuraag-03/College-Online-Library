@@ -1,7 +1,10 @@
+<!-- Html document starts here  -->
 <html>
 <head>
 <title>About Us</title>
+
 <style>
+/* Styling for Web-Page  */
 body{
   background: url("2.jpg");
 }
@@ -67,13 +70,14 @@ ul li:hover ul li{
     }
 
 </style>
-
-
 </head>
+
+<!-- Body starts here  -->
 <body>
 
   
-    <div class="box">
+    <div class="box"> 
+    <!-- Title Box  -->
      <table  style =" font-size:16pt"  align="center" width="100%" height="100%">
         <tr>
           <td style="color:white"><h1 align="center"><marquee><i>Welcome To online Library System</i>  </marquee></h1></td>
@@ -87,6 +91,7 @@ ul li:hover ul li{
 
 
       <div class="nav">
+      <!-- Menu Bar  -->
         <ul>
           <li><a href="home.php">HOME</a></li>
           <li><a href="helpus.php">HELP US</a></li>
@@ -98,16 +103,36 @@ ul li:hover ul li{
     </div>
           
           
-  <div class="boxtwo" style="border:solid 1px #CF0403;border-radius: 10px; width:84%; height:850px; margin-left:10%;margin-top:10px;background-color:white">
+  <div class="boxtwo" style="border:solid 1px #CF0403;border-radius: 10px; width:84%; height:850px;
+   margin-left:10%;margin-top:10px;background-color:white">
+   <!-- Heading  -->
       
-      <h1 style="color:yellow;text-align:center;background:rgba(255, 255, 255, 0.24)">ABOUT OUR ONLINE LIBRARY MANAGEMENT SYSTEM PROJECT </h1>
-      <P style="color:white;text-align:center;width:60%;font-weight:bold;margin-left
-:20%;background:rgba(0, 0, 0, 0.5);box-shadow:0px 0px 20px white;border-radius:10px;padding:3%;font-size:15px">This project is the prototype of a Simple Library Management System. Librarian has a provision to add book details like ID number, book title, author name, through the web page. In addition to this, librarian or any user has a provision to search for the available books in the library by the book id or book Name. If book details are present in the database, the search details are displayed on the web page.Student can request the librarian  for getting the book via this web.Student can easily download this book's E-Book which is PDF file.</P>
-      
-       <h2 style="color:#1602b2;text-align:center;background:rgba(255, 255, 255, 0.82);"> ACKNOWLEDGEMENT </h2>
-      <P style="color:white;text-align:center;width:60%;font-weight:bold;margin-left
-                :20%;background:rgba(0, 0, 0, 0.5);box-shadow:0px 0px 20px red;border-radius:10px;padding:3%;font-size:15px">We would like to express our special thanks of gratitude to our mentor <i>Srikanth Sir</i> who gave us the goldenopportunity to do this wonderful project on the topic : ONLINE LIBRARY MANAGEMENT SYSTEM using  PHP, which also helped us indoing a lot of Research and we came to know about so many new things we are really thankful to him.
+      <h1 style="color:yellow;text-align:center;background:rgba(255, 255, 255, 0.24)">
+      ABOUT OUR ONLINE LIBRARY MANAGEMENT SYSTEM PROJECT </h1>
 
+    <!-- what the online library offers  -->
+      <P style="color:white;text-align:center;width:60%;font-weight:bold;margin-left
+:20%;background:rgba(0, 0, 0, 0.5);box-shadow:0px 0px 20px white;border-radius:10px;
+padding:3%;font-size:15px">This project is the prototype of a Simple Online Library  System. 
+Adminstrator has a provision to Add Book details like ID number, book title, author name, 
+through the web page. Admin can also edit the books and delete books from the database.
+Students can search for books according to their department.  
+Student can easily download this book's E-Book which is PDF file.</P>
+      
+<!-- ACKNOWLEDGEMENT -->
+       <h2 style="color:#1602b2;text-align:center;background:rgba(255, 255, 255, 0.82);"> 
+       ACKNOWLEDGEMENT </h2>
+      <P style="color:white;text-align:center;width:60%;font-weight:bold;margin-left
+                :20%;background:rgba(0, 0, 0, 0.5);box-shadow:0px 0px 20px red;
+                border-radius:10px;padding:3%;font-size:15px">
+                We would like to express our special thanks of gratitude to our mentor 
+                <i>Srikanth Sir</i> 
+                who gave us the goldenopportunity to do this wonderful project 
+                on the topic : ONLINE LIBRARY SYSTEM using  PHP, 
+                which also helped us indoing a lot of Research and 
+                we came to know about so many new things we are really thankful to him.
+
+    <!-- group members information  -->
        <h2 style="color:#000000;text-align:center;background:rgba(255, 255, 255, 0.82)"> Group Members </h2>
        <br/>
        
@@ -116,30 +141,25 @@ ul li:hover ul li{
           
          <tr><td><br/></td><td> B Anuraag  </td><td><br/></td><td> Role = ( Backend Developer )
          <br>Mail-ID : anuraag.cbit@gmail.com</td><td><br/></td></tr>
-            
             <br/>
             <hr>
-          
           
          <tr><td><br/></td><td> D V Dheeraj </td><td><br/></td><td>Role  = ( Full Stack Developer )<br>Mail-ID : dheeraj.cbit@gmail.com</td><td><br/></td></tr>
-            
             <br/>
             <hr>
           
-          
           </marquee></div>
-   
-
   </div>
 
 
-
-        <div  style="background-color:orange; border:solid 2px orange;border-radius: 10px; width:84%; height:40px; margin-left:10%; margin-top:15px" >
-          <marquee behavior="alternate" direction="right" loop="1" style="margin-right:38%" align="center"><h6 style="line-height:1px;">Thank You For Using This System.</h6></marquee>
-
+      <!-- Thank You Box  -->
+        <div  style="background-color:orange; border:solid 2px orange;border-radius: 10px; 
+        width:84%; height:40px; margin-left:10%; margin-top:15px" >
+          <marquee behavior="alternate" direction="right" loop="1" style="margin-right:38%" 
+          align="center"><h6 style="line-height:1px;">Thank You For Using This System.
+        </h6></marquee>
 
         </div>
-
 
 </body>
 </html>

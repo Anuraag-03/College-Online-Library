@@ -1,15 +1,10 @@
-<?php
-
-//$name=$_SESSION["name"];
-//$email=$_SESSION["email"];
-//$gender=$_SESSION["sgender"];
-
-?>
-
+<!-- Html document starts  -->
 <html>
 <head>
 <title>helpUs</title>
-    <style>
+
+<style>
+/* Styling the Web-Page  */
 body{
   background: url("2.jpg");
 }
@@ -74,39 +69,44 @@ ul li:hover ul li{
             text-align: center;
         }
 </style>
-
-
 </head>
-<body>
 
-  <head><title>LOGIN_PAGE</title></head>
-  <body>
-    <div class="box">
+<!-- Body Starts  -->
+<body>
+    <div class="box"> 
+    <!-- Title Box  -->
      <table  style =" font-size:16pt"  align="center" width="100%" height="100%">
         <tr>
-          <td style="color:white"><h1 align="center"><marquee><i>Welcome To online Library System</i>  </marquee></h1></td>
+          <td style="color:white"><h1 align="center">
+            <marquee><i>Welcome To online Library System</i>  </marquee></h1></td>
         </tr>
         <tr>
-          <td align="center"><b><i><mark style="color:white;background-color:maroon";>CONTRIBUTE TO US</mark></i></b></td>
+          <td align="center"><b><i><mark style="color:white;background-color:maroon";>
+          CONTRIBUTE TO US</mark></i></b></td>
         </tr>
       </table>
     </div>
 
 
-
       <div class="nav">
+        <!-- Menu Bar  -->
         <ul>
-          <li><a href="home.php">HOME</a></li>
+          <!-- redirects to home page  -->
+          <li><a href="home.php">HOME</a></li> 
+          <!-- current page  -->
           <li><a  style="background-color: green" href="helpus.php">HELP US</a></li>
-          <li><a href="aboutus.php">ABOUT US</a>
-          </li>
+          <!-- redirects to about us page  -->
+          <li><a href="aboutus.php">ABOUT US</a></li>
+          <!-- redirects to login page  -->
           <li><a href="logout-user.php">LOGOUT</a></li>
         </ul>
     <br><br>
           
           
-  <div class="boxtwo" style="border:solid 1px #CF0403;border-radius: 10px; width:92%; height:360px; margin-left:0%;margin-top:10px;background-color:white">
-      
+  <div class="boxtwo" style="border:solid 1px #CF0403;border-radius: 10px; 
+   width:92%; height:360px; margin-left:0%;margin-top:10px;background-color:white">
+   <!-- content box  -->
+      <!-- message  -->
       <p style="color:white"align="center"> 
       We are a team willing to make the progress of information transfer fast. <br/>
       We believe that everyone has the right to access information as the transfer<br/> of information plays 
@@ -121,24 +121,21 @@ ul li:hover ul li{
       <br/>
       Users who are intrested to contribute eBooks to the project 
       are requested to add the eBook in the following drive !!<br/>
-
-      <a href="https://drive.google.com/drive/folders/1K2Q5tAq4XgYWpctrPA4NViOmt-NpFFHq"target="_blank"><u style="color:white">eBooks Drive</u></a>
-
-
-
-      </p>
+      <!-- drive link for uploading eBooks  -->
+      <a href="https://drive.google.com/drive/folders/1K2Q5tAq4XgYWpctrPA4NViOmt-NpFFHq"target="_blank">
+        <u style="color:white">eBooks Drive</u></a>
+    </p>
       
     
   </div>
 
 
+<!-- Thank U box  -->
+<div  style="background-color:orange; border:solid 2px orange;
+border-radius: 10px; width:92%; height:40px; margin-left:0%; margin-top:15px" >
+<p ><h6 style="line-height:1px;"align="center">Thank You For Using This System.</h6></p>
 
-        <div  style="background-color:orange; border:solid 2px orange;border-radius: 10px; width:92%; height:40px; margin-left:0%; margin-top:15px" >
-          <p ><h6 style="line-height:1px;"align="center">Thank You For Using This System.</h6></p>
-
-
-        </div>
-
+</div>
 
 </body>
 </html>

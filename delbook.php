@@ -1,46 +1,51 @@
 <?php include("conn.php");
+// includes conn.php file which establishes connection with Lib-DB
 
-$msg="";
-
-
+$msg=""; // Success/Error Message
 
 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['sub']))
 
 {
-
-
+  // gets id posted by admin
   $id=$_POST['book_id'];  
   
-
+  // if id is not empty string
   if($id!="")
   {  
+    // SQL query to delete from table 
       $sql="DELETE FROM `book` WHERE `book`.`b_id` ="."'$id'";
-      
+  // executing the query and retrieving into data    
 	$data = mysqli_query($conn, $sql);
 	
-      if($data)
+   // if query is executed successfully 
+    if($data)
 	  {
-	    $msg= "Book Delete Successfully";
+	    $msg= "Book Delete Successfully"; // success message
 	  }
+    // if query failed to execute
 	  else
 	  {
-	    $msg= "Something Went Wrong..";
+	    $msg= "Something Went Wrong.."; // failure message
 	  }
-}
-    else
+  }
+  // if book_id is left empty and submit is invoked
+  else
 	  {
 	   $msg="Book ID Required";
 	  }
 }
 ?>
+
+
 <html>
 <head>
 <title>Delete_Book</title>
 
 
 <style>
+/* Styling for the web-page  */
 body{
-  background: url();
+  background: url(2.jpg);
 }
 .box{
   width:74%;
@@ -159,15 +164,17 @@ ul li:hover ul li{
   padding-left:12%;
 
 }
-
-
 </style>
 </head>
+
+<!-- Body starts here  -->
 <body>
   <div class="box">
+  <!-- Info Display Box -->
    <table  style ="border-color:red; font-size:16pt"  align="center" width="100%" height="100%">
       <tr>
-        <td style="color:blue"><h1 align="center"><marquee>Welcome To Online Library System</marquee></h1></td>
+        <td style="color:blue"><h1 align="center">
+          <marquee>Welcome To Online Library System</marquee></h1></td>
       </tr>
       <tr>
         <td style="color:blue" align="center"><b><i>DELETE BOOK FROM DATABASE</i></b></td>
@@ -175,40 +182,58 @@ ul li:hover ul li{
     </table>
   </div>
 <div class="nav">
+<!-- Menu Options -->
 <ul>
-  <li><a href = "admin.php">Home</a></li>
+  <!-- Redirects to Admin DashBoard -->
+  <li><a href = "admin.php">Admin Dashboard</a></li>
+  <!-- redirects to add book page -->
   <li ><a href = "add_book.php" >Add Book</a></li>
+  <!-- redirects to edit book page -->
   <li><a href = "edit_book.php" >Edit Book</a></li>
-    <li><a href = "delbook.php"  style="background-color:green">Delete Book</a></li>
+  <!-- current file  -->
+  <li><a href = "delbook.php"  style="background-color:green">Delete Book</a></li>
+  <!-- log-out which redirects to login page -->
   <li><a href = "logout-user.php">Logout</a></li>
 </ul>
 <br><br><br>
 </div>
 
 <form action="" method="POST" enctype="multipart/form-data">
+<!-- Form which sends inputs suing post method 
+and the enctype here provides files to passed by the form using post method -->
 <div class = "header">
-
-
+<!-- Outer Box -->
   <div class = "container">
+  <!-- Inner Box -->
     <div class="title">
+    <!-- Heading element -->
     <h2>DELETE BOOK</h2>
-      </div>
+    </div>
 
   <table style= "color:#FFFFFF;padding-top:10px;">
-      
-       <tr>
+      <!-- Table for deleting the file  -->
+
+      <!-- Book_id field  -->
+      <tr> 
      <td style="width:250px;text-align:center">BOOK ID:</td>
      <td><input style="width:200px;" type="text" name="book_id" placeholder="books ID"/></td>
 	</tr>
-      
-      <tr>
+     
+    <!-- Submit Button  -->
+    <tr>
 	  <td><h2><input style="margin-left:100%;margin-top:30%;" type="submit" name="sub" value="Delete"/></h2></td>
 	  </tr>
       
-      <tr><td  style="color:red;font-weight:bold;text-align:center"><?php echo $msg; ?></td></tr>
+    <!-- To echo success or failure message  -->
+    <tr><td  style="color:red;font-weight:bold;text-align:center">
+    <?php echo $msg; ?>
+    </td></tr> 
+
     </table>
     </div>
    </div> 
+
  </form>
+
 </body>
 </html>
