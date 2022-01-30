@@ -31,7 +31,7 @@ $path=$ros['path'];
 // we will be downloading the pdf whose name is given by id
 header('content-Disposition: attachment;filename = '.$id.'');
 
-// outputing the pdf 
+// producing the pdf as output
 header('content-type:application/pdf');
 
 // gives the size of the file 
