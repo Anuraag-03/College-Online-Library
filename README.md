@@ -14,3 +14,8 @@ Server (XAMPP)
 6th Step: Create a database naming “lib” and then click on the import tab
 7th Step: Click on browse file and select “lib.sql” file which is inside the “sql field” folder
 8th Step: Click on go.
+After Creating Database,
+
+9th Step: Open a browser and go to URL “http://localhost/Library-Management-System/”
+
+Note: For the admin page, go to URL “http://localhost/Library-Management-System/admin.php”
