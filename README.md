@@ -1,4 +1,4 @@
-# MiniProject-Sem-III
+# MiniProject-Sem-III Online Library
 Done By B Anuraag and DV Dheeraj
 
 Front-End (HTML, CSS, Bootstrap)
