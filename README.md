@@ -1,9 +1,12 @@
 # MiniProject-Sem-III
 Done By B Anuraag and DV Dheeraj
 
-Front-End (HTML, CSS)
+Front-End (HTML, CSS, Bootstrap)
+
 Back-End (PHP)
+
 Database(MariaDB/MySQL)
+
 Server (XAMPP)
 
 1st Step: Extract file
